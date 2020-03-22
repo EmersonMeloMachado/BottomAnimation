@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:custom="clr-namespace:BottomAnimation.CustonViews"
+             mc:Ignorable="d"
+             x:Class="BottomAnimation.MainPage"
+             BackgroundColor="#800080"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+
+        <Entry Visual="Material" 
+               Placeholder="Login" 
+               TextColor="White" 
+               BackgroundColor="Transparent"
+               Margin="50,0"/>
+
+        <Entry Visual="Material" 
+               Placeholder="Senha" 
+               TextColor="White" 
+               IsPassword="True"
+               BackgroundColor="Transparent"
+               Margin="50,0"/>
+
+        <Grid Margin="0,25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <custom:CustomButtomActivityView Grid.Row="0"
+                                             VerticalOptions="Fill"
+                                             HorizontalOptions="Center"
+                                             x:Name="CustomButtomActivity"
+                                             ButtonText="Testando 1"
+                                             ButtonBackgroundColor="Transparent"
+                                             ButtonBorderColor="White"
+                                             ButtonBorderWidth="2" 
+                                             ButtonTextColor="White"
+                                             ButtonBorderRadius="8"
+                                             Margin="50,0" 
+                                             HeightRequest="60"
+                                             WidthRequest="250"
+                                             IsBusy="False"
+                                             ColorActivity="White"
+                                             CustomButtomActivityClicked="Button_Clicked"/>
+
+            <custom:CustomButtonView Grid.Row="1"
+                                     VerticalOptions="Fill"
+                                     HorizontalOptions="Center" 
+                                     x:Name="CustomFrame"
+                                     Padding="0"
+                                     FrameHeightRequest="60"
+                                     FrameWidthRequest="250"
+                                     FrameBorderColor="White"
+                                     FrameBackgroundColor="Transparent"
+                                     LabelText="Testando 2"
+                                     ColorText="White"
+                                     LabelIsVisible="True"
+                                     LabelHorizontalTextAlignment ="Center"
+                                     LabelVerticalTextAlignment="Center"
+                                     LabelHorizontalOptions="CenterAndExpand"
+                                     IsBusy="False"
+                                     ColorActivity="White">
+                <custom:CustomButtonView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </custom:CustomButtonView.GestureRecognizers>
+            </custom:CustomButtonView>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
